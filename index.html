@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>100バス — Electric Sheep</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="エレクトリックシープ・ハッカソン チーム100バス"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Syne:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=block"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Syne:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=block"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="portfolio is-splash fonts-pending">
+    <div id="splash" class="splash" role="presentation" aria-hidden="true">
+      <div class="splash-sky" aria-hidden="true"></div>
+      <canvas id="splashCanvas" class="splash-canvas" aria-hidden="true"></canvas>
+      <p class="splash-title" id="splashTitle">SF Prototyping Hackathon</p>
+      <button type="button" class="splash-skip" id="splashSkip">Skip</button>
+    </div>
+
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <div class="stage-shell">
+      <div class="stage">
+        <header class="site-header">
+          <div class="header-inner">
+            <p class="logo">100バス</p>
+            <div class="header-tools">
+              <nav class="site-nav" aria-label="Primary">
+                <a href="#sec-hero">Intro</a>
+                <a href="#sec-theme">Theme</a>
+                <a href="#sec-hours">Hours</a>
+                <a href="#sec-todo">TODO</a>
+                <a href="#sec-schedule">Schedule</a>
+                <a href="#sec-ideas">Ideas</a>
+                <a href="#sec-mtg">MTG</a>
+              </nav>
+              <div class="lang-switch" role="group" aria-label="Language">
+                <button type="button" class="lang-btn is-active" data-lang-set="ja" aria-pressed="true">JA</button>
+                <button type="button" class="lang-btn" data-lang-set="en" aria-pressed="false">EN</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="scene scene-hero" id="sec-hero">
+          <div class="sky-deck" id="skyDeck" aria-hidden="true">
+            <svg class="summer-sky" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#fff8e7" stop-opacity="0.95" />
+                  <stop offset="40%" stop-color="#c6a661" stop-opacity="0.4" />
+                  <stop offset="100%" stop-color="#c6a661" stop-opacity="0" />
+                </radialGradient>
+                <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="1.2" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- こと座 Lyra -->
+              <g class="constellation c-lyra" data-drift="a" filter="url(#softGlow)">
+                <g class="lines-glow">
+                  <line x1="148" y1="78" x2="196" y2="118" />
+                  <line x1="196" y1="118" x2="168" y2="168" />
+                  <line x1="168" y1="168" x2="116" y2="138" />
+                  <line x1="116" y1="138" x2="148" y2="78" />
+                  <line x1="168" y1="168" x2="154" y2="218" />
+                </g>
+                <g class="lines-core">
+                  <line x1="148" y1="78" x2="196" y2="118" />
+                  <line x1="196" y1="118" x2="168" y2="168" />
+                  <line x1="168" y1="168" x2="116" y2="138" />
+                  <line x1="116" y1="138" x2="148" y2="78" />
+                  <line x1="168" y1="168" x2="154" y2="218" />
+                </g>
+                <circle class="halo" cx="148" cy="78" r="18" fill="url(#starGlow)" />
+                <circle class="star star-bright" cx="148" cy="78" r="3.8" />
+                <circle class="star" cx="196" cy="118" r="1.9" />
+                <circle class="star" cx="168" cy="168" r="1.7" />
+                <circle class="star" cx="116" cy="138" r="1.8" />
+                <circle class="star" cx="154" cy="218" r="1.5" />
+              </g>
+
+              <!-- はくちょう座 Cygnus -->
+              <g class="constellation c-cygnus" data-drift="b" filter="url(#softGlow)">
+                <g class="lines-glow">
+                  <line x1="620" y1="52" x2="678" y2="118" />
+                  <line x1="678" y1="118" x2="760" y2="92" />
+                  <line x1="678" y1="118" x2="658" y2="210" />
+                  <line x1="678" y1="118" x2="590" y2="158" />
+                  <line x1="658" y1="210" x2="642" y2="268" />
+                </g>
+                <g class="lines-core">
+                  <line x1="620" y1="52" x2="678" y2="118" />
+                  <line x1="678" y1="118" x2="760" y2="92" />
+                  <line x1="678" y1="118" x2="658" y2="210" />
+                  <line x1="678" y1="118" x2="590" y2="158" />
+                  <line x1="658" y1="210" x2="642" y2="268" />
+                </g>
+                <circle class="halo" cx="620" cy="52" r="17" fill="url(#starGlow)" />
+                <circle class="star star-bright" cx="620" cy="52" r="3.6" />
+                <circle class="star" cx="678" cy="118" r="2.2" />
+                <circle class="star" cx="760" cy="92" r="1.8" />
+                <circle class="star" cx="658" cy="210" r="1.9" />
+                <circle class="star" cx="590" cy="158" r="1.7" />
+                <circle class="star" cx="642" cy="268" r="1.5" />
+              </g>
+
+              <!-- わし座 Aquila -->
+              <g class="constellation c-aquila" data-drift="c" filter="url(#softGlow)">
+                <g class="lines-glow">
+                  <line x1="390" y1="188" x2="458" y2="218" />
+                  <line x1="458" y1="218" x2="518" y2="172" />
+                  <line x1="458" y1="218" x2="476" y2="292" />
+                  <line x1="476" y1="292" x2="448" y2="338" />
+                </g>
+                <g class="lines-core">
+                  <line x1="390" y1="188" x2="458" y2="218" />
+                  <line x1="458" y1="218" x2="518" y2="172" />
+                  <line x1="458" y1="218" x2="476" y2="292" />
+                  <line x1="476" y1="292" x2="448" y2="338" />
+                </g>
+                <circle class="halo" cx="458" cy="218" r="16" fill="url(#starGlow)" />
+                <circle class="star" cx="390" cy="188" r="1.9" />
+                <circle class="star star-bright" cx="458" cy="218" r="3.5" />
+                <circle class="star" cx="518" cy="172" r="2" />
+                <circle class="star" cx="476" cy="292" r="1.6" />
+                <circle class="star" cx="448" cy="338" r="1.4" />
+              </g>
+
+              <!-- さそり座 Scorpius -->
+              <g class="constellation c-scorpius" data-drift="e" filter="url(#softGlow)">
+                <g class="lines-glow">
+                  <path d="M980 88 L1024 72 M980 88 L1012 48 M980 88 L1038 118 L1082 158 L1070 214 L1022 258 L968 286 L922 318 L886 348" />
+                </g>
+                <g class="lines-core">
+                  <path d="M980 88 L1024 72 M980 88 L1012 48 M980 88 L1038 118 L1082 158 L1070 214 L1022 258 L968 286 L922 318 L886 348" />
+                </g>
+                <circle class="halo" cx="1082" cy="158" r="15" fill="url(#starGlow)" />
+                <circle class="star" cx="1012" cy="48" r="1.5" />
+                <circle class="star" cx="1024" cy="72" r="1.5" />
+                <circle class="star" cx="980" cy="88" r="2" />
+                <circle class="star" cx="1038" cy="118" r="1.7" />
+                <circle class="star star-bright" cx="1082" cy="158" r="3.4" />
+                <circle class="star" cx="1070" cy="214" r="1.8" />
+                <circle class="star" cx="1022" cy="258" r="1.6" />
+                <circle class="star" cx="968" cy="286" r="1.5" />
+                <circle class="star" cx="922" cy="318" r="1.5" />
+                <circle class="star" cx="886" cy="348" r="1.4" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="hero-copy">
+            <p class="sf-chip" data-i18n="hero.chip">SF × Fieldwork · Electric Sheep</p>
+            <p class="logo-hero">100バス</p>
+            <p class="hero-lead" data-i18n-html="hero.lead">
+              100つの〇〇を達成する。<br />
+              検証から問題を洗い出す。
+            </p>
+            <p class="sf-meta">
+              <span data-i18n="hero.m1">01 // 100を積む</span>
+              <span data-i18n="hero.m2">02 // 検証する</span>
+              <span data-i18n="hero.m3">03 // 地道に行く</span>
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#sec-theme" data-i18n="hero.cta1">テーマ</a>
+              <a class="btn btn-ghost" href="#sec-todo" data-i18n="hero.cta2">TODOを見る</a>
+            </div>
+          </div>
+          <div class="scroll-cue"><span></span>SCROLL</div>
+        </section>
+
+        <section class="scene" id="sec-theme">
+          <div class="scene-head">
+            <p class="eyebrow">Theme</p>
+            <h2 data-i18n="theme.h2">チームの方針</h2>
+          </div>
+          <div class="theme-grid">
+            <article
+              class="panel theme-card"
+              data-reveal
+              data-detail="MTG補足：100人をやりきることが最重要、という合意。古川は介護施設テレアポに専念。件数より「100人規模」をやり切る。"
+            >
+              <p class="theme-num">01</p>
+              <h3 data-i18n="theme.1.t">100つの〇〇を達成する</h3>
+              <p data-i18n="theme.1.p">
+                資料100・映画100・施設100・ヒアリング100——数字を目標にして、量から質へつなぐ。
+              </p>
+            </article>
+            <article
+              class="panel theme-card"
+              data-reveal
+              data-detail="MTG補足：8月は探索期間。カスタマープロブレムフィットの検証を行う。仮説より先に、現場と記録。"
+            >
+              <p class="theme-num">02</p>
+              <h3 data-i18n="theme.2.t">検証から問題を洗い出す</h3>
+              <p data-i18n="theme.2.p">
+                仮説より先に現場と記録。読んで、聞いて、回って、ずれを見つける。
+              </p>
+            </article>
+            <article
+              class="panel theme-card"
+              data-reveal
+              data-detail="MTG補足：メンター面談では作戦とスケジュールの説明に留め、アイデア決定を急がない。地道な進捗を見せるスタンス。"
+            >
+              <p class="theme-num">03</p>
+              <h3 data-i18n="theme.3.t">あえて、地道に</h3>
+              <p data-i18n="theme.3.p">
+                近道のアイデアより、積み上げ。派手さより再現できる手数を選ぶ。
+              </p>
+            </article>
+          </div>
+
+          <div class="insight-grid">
+            <article
+              class="panel insight"
+              data-reveal
+              data-detail="定例MTGより：今の時間軸の課題と、100歳になった未来の課題。SF審査では未来想像が評価されやすい一方、今の健康課題起点もありうる。"
+            >
+              <p class="eyebrow" data-i18n="insight.axis">MTG Insight</p>
+              <h3 data-i18n="insight.1.t">今の課題 × 100歳の未来</h3>
+              <p data-i18n="insight.1.p">時間軸を二層で整理する。いま解く課題と、未来の課題を分けて見る。</p>
+            </article>
+            <article
+              class="panel insight"
+              data-reveal
+              data-detail="Kanno提案・合意：実際にある課題を、SF感のある形に拡大する。過去データから病気確率の上昇などを示し、100歳時点の予測につなぐ案も議論。"
+            >
+              <p class="eyebrow" data-i18n="insight.axis">MTG Insight</p>
+              <h3 data-i18n="insight.2.t">実在課題を、SFへ拡大する</h3>
+              <p data-i18n="insight.2.p">現場の痛みを起点に、SFのスケールへ伸ばす。空想だけの未来にしない。</p>
+            </article>
+            <article
+              class="panel insight"
+              data-reveal
+              data-detail="はまかわの都市調査と高齢者テーマの紐付けとして、「終わりの地をここにした理由」「なぜ住み続けるか」を聞く。介護施設（70–100）と一般高齢（55–60）を分けてアプローチ。"
+            >
+              <p class="eyebrow" data-i18n="insight.axis">MTG Insight</p>
+              <h3 data-i18n="insight.3.t">終わりの地を、ここにした理由</h3>
+              <p data-i18n="insight.3.p">都市と老いを結びつける問い。住み続ける理由から課題を掘る。</p>
+            </article>
+          </div>
+
+          <div class="policy-band" data-reveal>
+            <p class="eyebrow" data-i18n="policy.eyebrow">全体方針 · Mission Log</p>
+            <p class="policy-line" data-i18n="policy.line">データを残そう！</p>
+            <p class="policy-sf" data-i18n="policy.sf">地道な検証の痕跡を、すべてログに残す。</p>
+          </div>
+        </section>
+
+        <section class="scene" id="sec-hours">
+          <div class="scene-head">
+            <p class="eyebrow">01</p>
+            <h2 data-i18n="hours.h2">稼働時間の宣言！</h2>
+          </div>
+          <div class="hours-grid">
+            <article class="panel" data-reveal>
+              <h3>秋穂</h3>
+              <p class="total" data-i18n-html="hours.total4">合計 <strong>4</strong> 時間</p>
+              <ul>
+                <li data-i18n="hours.tue2">火曜日：2時間</li>
+                <li data-i18n="hours.sat2">土曜日：2時間</li>
+              </ul>
+            </article>
+            <article class="panel" data-reveal>
+              <h3>Kanno</h3>
+              <p class="total" data-i18n-html="hours.total3">合計 <strong>3</strong> 時間</p>
+              <ul>
+                <li data-i18n="hours.tue1">火曜日：1時間</li>
+                <li data-i18n="hours.thu1">木曜日：1時間</li>
+                <li data-i18n="hours.sat1">土曜日：1時間</li>
+              </ul>
+            </article>
+            <article class="panel" data-reveal>
+              <h3>はま</h3>
+              <p class="total" data-i18n-html="hours.total3">合計 <strong>3</strong> 時間</p>
+              <ul>
+                <li data-i18n="hours.sun2">日曜日：2時間</li>
+                <li data-i18n="hours.wed1">水曜日：1時間</li>
+              </ul>
+            </article>
+            <article class="panel" data-reveal>
+              <h3>ゆう</h3>
+              <p class="total" data-i18n-html="hours.total3">合計 <strong>3</strong> 時間</p>
+              <ul>
+                <li data-i18n="hours.mon1">月曜日：1時間</li>
+                <li data-i18n="hours.wed1">水曜日：1時間</li>
+                <li data-i18n="hours.fri1">金曜日：1時間</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="scene" id="sec-todo">
+          <div class="scene-head">
+            <p class="eyebrow">02</p>
+            <h2>TODO</h2>
+          </div>
+          <div class="todo-stack">
+            <article class="panel todo" data-reveal>
+              <h3>秋穂</h3>
+              <p class="todo-label" data-i18n="todo.done">やったこと</p>
+              <ul class="checks">
+                <li class="done" data-i18n="todo.a1">100資料を調査</li>
+                <li class="done" data-i18n="todo.a2">for-aに連絡した</li>
+                <li class="done" data-i18n="todo.a3">14個まで読み終えた</li>
+              </ul>
+              <p class="todo-label" data-i18n="todo.learned">わかったこと · 時間軸</p>
+              <ul class="checks">
+                <li data-i18n="todo.a4">今の課題にするのか</li>
+                <li data-i18n="todo.a5">100歳になった時の未来を予測する</li>
+              </ul>
+            </article>
+            <article class="panel todo" data-reveal>
+              <h3>古川</h3>
+              <ul class="checks">
+                <li data-i18n="todo.f1">高齢者100人にヒアリング（介護施設経由 · 70〜100歳）</li>
+                <li data-i18n="todo.f2">8/15 何件できたか</li>
+              </ul>
+            </article>
+            <article class="panel todo" data-reveal>
+              <h3>濱川</h3>
+              <p class="todo-label" data-i18n="todo.h.label">100施設 · 都市回ってみた</p>
+              <ul class="checks">
+                <li class="done" data-i18n="todo.h1">過去のやつを書き出した</li>
+                <li data-i18n="todo.h2">各都市の50〜60歳にヒアリング（ここにずっと住んでいる理由）</li>
+                <li data-i18n="todo.h3">チラシ・HPの住民の声をFableで取得（イベント、住民の声）</li>
+              </ul>
+            </article>
+            <article class="panel todo" data-reveal>
+              <h3>岩瀬</h3>
+              <p class="todo-label" data-i18n="todo.i.label">SF小説100作品読む</p>
+              <ul class="checks">
+                <li data-i18n="todo.i1">星新一の高齢者・不老不死・老いなど、テーマ関連を既読200作品からピックアップ</li>
+              </ul>
+            </article>
+            <article class="panel todo" data-reveal>
+              <h3>Kanno</h3>
+              <p class="todo-label" data-i18n="todo.k.label">SF映画を100作品</p>
+              <ul class="checks">
+                <li class="done" data-i18n="todo.k1">100作品をリストアップ</li>
+                <li data-i18n="todo.k2">クラスタリング（不老不死、ロボット など）をAIでやる</li>
+                <li data-i18n="todo.k3">クラスから気になった1本を視聴（例：ロボット、高齢化、不老不死、宇宙旅行）</li>
+              </ul>
+            </article>
+            <article class="panel todo" data-reveal>
+              <h3 data-i18n="todo.phys">フィジカル</h3>
+              <ul class="checks">
+                <li data-i18n="todo.p1">for-aに工場見学</li>
+                <li data-i18n="todo.p2">100枚名刺交換 → 秋穂</li>
+                <li data-i18n="todo.p3">1日100回感謝を伝える</li>
+                <li data-i18n="todo.p4">100人に土下座</li>
+                <li data-i18n="todo.p5">幸福学・well-beingの本を100冊</li>
+                <li data-i18n="todo.p6">100枚ハガキを書く</li>
+              </ul>
+            </article>
+            <article class="panel todo" data-reveal>
+              <h3 data-i18n="todo.dig">デジタル</h3>
+              <ul class="checks">
+                <li data-i18n="todo.d1">100個資料を読む → 秋穂</li>
+                <li data-i18n="todo.d2">高齢者に関連する論文を100本読む</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="scene" id="sec-schedule">
+          <div class="scene-head">
+            <p class="eyebrow">03</p>
+            <h2 data-i18n="sched.h2">スケジュール</h2>
+          </div>
+          <ol class="timeline">
+            <li data-reveal>
+              <span class="t-date">7/30</span>
+              <div>
+                <strong data-i18n="sched.1">メンター面談</strong>
+                <p data-i18n="sched.1p">テレビ取材あり。作戦と進捗の現状報告（プロダクト確定は急がない）</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="t-date" data-i18n="sched.aug">8月</span>
+              <div>
+                <strong data-i18n="sched.2">探索期間</strong>
+                <p data-i18n="sched.2p">ヒアリング・資料収集。カスタマープロブレムフィットの検証。8月中に各タスク完了を目標</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="t-date">8/15</span>
+              <div>
+                <strong data-i18n="sched.815">ヒアリング進捗チェック</strong>
+                <p data-i18n="sched.815p">古川：介護施設テレアポの件数・アポイント状況</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="t-date">9/13</span>
+              <div>
+                <strong data-i18n="sched.3">ハッカソン本番</strong>
+                <p data-i18n="sched.3p">9/12〜13 実装期間を含む</p>
+              </div>
+            </li>
+          </ol>
+          <div
+            class="panel dinner"
+            data-reveal
+            data-detail="定例MTGより：はまかわ（福岡）・秋穂（新宿）参加可。ランチ想定（13時過ぎ〜）。候補にしゃぶ葉。詳細はDiscordで調整。ハウステンボス願望もあり。"
+          >
+            <p class="eyebrow" data-i18n="dinner.title">ご飯いこう！</p>
+            <ul>
+              <li data-i18n="dinner.1">候補：土日ランチ（13時過ぎ〜）</li>
+              <li data-i18n="dinner.2">はまが東京・午後（都内・場所調整中）</li>
+              <li data-i18n="dinner.3">候補例：しゃぶ葉 ／ ハウステンボス願望もあり</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="scene" id="sec-ideas">
+          <div class="scene-head">
+            <p class="eyebrow">04</p>
+            <h2 data-i18n="ideas.h2">アイデア</h2>
+          </div>
+          <div class="idea-grid">
+            <article
+              class="panel"
+              data-reveal
+              data-detail="初回MTG：岩瀬が提案。AI壁打ち段階の種。"
+            >
+              <h3 data-i18n="ideas.1">国際宇宙ステーションでの遠隔操作研究実験</h3>
+            </article>
+            <article
+              class="panel"
+              data-reveal
+              data-detail="初回MTG：岩瀬が提案した宇宙関連アイデアの一つ。"
+            >
+              <h3 data-i18n="ideas.2">遠隔操作によるスペースデブリ回収</h3>
+            </article>
+            <article
+              class="panel"
+              data-reveal
+              data-detail="初回MTG：岩瀬提案。老い・意思・デジタルの交差点として種出し。"
+            >
+              <h3 data-i18n="ideas.3">AI遺言執行人（仮）</h3>
+            </article>
+            <article
+              class="panel"
+              data-reveal
+              data-detail="定例MTG：不老不死・ベンジャミン・バトン・アルジャーノンなどが例。実際の課題をSFへ拡大する方針と接続。"
+            >
+              <h3 data-i18n="ideas.4">高齢化 · 健康面の課題</h3>
+              <p data-i18n="ideas.4p">データを探す · 実在課題をSFスケールへ</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="scene" id="sec-research">
+          <div class="scene-head">
+            <p class="eyebrow">05</p>
+            <h2 data-i18n="research.h2">調査</h2>
+          </div>
+          <div class="research-row">
+            <article
+              class="panel"
+              data-reveal
+              data-detail="初回で古川担当案→定例ではKannoが映画クラスタリング。高齢者テーマ関連を10本程度ピックアップして視聴。"
+            >
+              <h3 data-i18n="research.1">SF映画100本</h3>
+              <p>Kanno</p>
+            </article>
+            <article
+              class="panel"
+              data-reveal
+              data-detail="はまかわ：100施設・100都市の記録済み。次は都市の良い場所＋ケア施設情報・住民の声をAI並列収集。高齢者インタビュー（公園・道端／施設）で「住み続ける理由」を聞く。"
+            >
+              <h3 data-i18n="research.2">100施設 · 都市回ってみた</h3>
+              <p>濱川</p>
+            </article>
+            <article
+              class="panel"
+              data-reveal
+              data-detail="岩瀬：星新一約200からテーマ関連を抽出→10クラスターに分類し代表作を精読。学術100資料は体予防・認知・住環境・社会参加・デジタル・AI・倫理などでオントロジー済み。"
+            >
+              <h3 data-i18n="research.3">SF小説 · 資料オントロジー</h3>
+              <p>岩瀬</p>
+            </article>
+            <article
+              class="panel"
+              data-reveal
+              data-detail="古川：介護施設テレアポ。8/15マイルストーン。1週目アポ調整、2–3週目実施。目標は100人規模。秋穂の介護系AIインターン縁も活用。"
+            >
+              <h3 data-i18n="research.4">介護施設ヒアリング</h3>
+              <p>古川</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="scene" id="sec-mtg">
+          <div class="scene-head">
+            <p class="eyebrow">06</p>
+            <h2 data-i18n="mtg.h2">MTGログ</h2>
+            <p class="scene-lead" data-i18n="mtg.lead">議事録から、方針とアクションを補足。</p>
+          </div>
+
+          <div class="mtg-cards">
+            <article
+              class="panel mtg-card"
+              data-reveal
+              data-kicker="初回MTG"
+              data-detail="白紙から開始。100個チャレンジの分担を決定。8月=探索、9月頭から実装。高齢者ヒアリングは60歳以上に拡大し複数人で分担。定期MTGは月・金 8:00〜25分。Notionで共有。"
+            >
+              <p class="eyebrow">初回MTG</p>
+              <h3 data-i18n="mtg.first.t">キックオフ · 100チャレンジ分担</h3>
+              <p data-i18n="mtg.first.p">
+                宇宙アイデア／AI遺言執行人の種出し。探索期間と役割分担を確定。
+              </p>
+              <a
+                class="link"
+                href="https://app.notta.ai/share/64281f12-122d-47b0-a526-ea23d0e38b49?lang=ja-JP&t=b8f188a65871cac73df399456fa7b866"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="mtg.open"
+                >議事録を開く</a
+              >
+            </article>
+
+            <article
+              class="panel mtg-card"
+              data-reveal
+              data-kicker="定例MTG"
+              data-detail="参加者：秋穂・古川・はまかわ・岩瀬・Kanno。古川=介護テレアポ100人（8/15）。はまかわ=都市×高齢者インタビュー＋住民の声。岩瀬=SFクラスタリング＋101日デザインメソッド。Kanno=映画クラスタリング。7/30メンター面談は現状報告。軸＝今の課題×100歳の未来／実在課題のSF拡大。"
+            >
+              <p class="eyebrow">定例MTG</p>
+              <h3 data-i18n="mtg.reg.t">進捗共有 · 軸の議論</h3>
+              <p data-i18n="mtg.reg.p">
+                タスク整理と、「今／未来」の二軸。メンター面談の資料方針を決定。
+              </p>
+              <a
+                class="link"
+                href="https://app.notta.ai/share/5c39d41c-5790-477b-b4e4-84e3df398c43?lang=ja-JP&t=3cd2aa617d2cb39f7dbbc23aa760dac5"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="mtg.open"
+                >議事録を開く</a
+              >
+            </article>
+          </div>
+
+          <ul class="mtg-list">
+            <li data-reveal>
+              <time>2026/07/27</time>
+              <span data-i18n="mtg.1">定例MTG</span>
+            </li>
+            <li data-reveal>
+              <time>2026/07/24</time>
+              <span data-i18n="mtg.2">定例MTG · 議事録収録</span>
+            </li>
+            <li data-reveal>
+              <time>2026/07/20</time>
+              <span data-i18n="mtg.0">初回MTG</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="scene scene-close" id="sec-close">
+          <p class="eyebrow">Electric Sheep</p>
+          <p class="close-brand">100バス</p>
+          <p class="close-lead" data-i18n="close.lead">100を積み、検証し、地道に。</p>
+        </section>
+      </div>
+    </div>
+
+    <div id="panelModal" class="panel-modal" hidden>
+      <div class="panel-modal-backdrop" data-close></div>
+      <div class="panel-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="panelModalTitle">
+        <button type="button" class="panel-modal-close" data-close aria-label="Close">×</button>
+        <p class="panel-modal-kicker" id="panelModalKicker"></p>
+        <h3 id="panelModalTitle"></h3>
+        <p class="panel-modal-body" id="panelModalBody"></p>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
