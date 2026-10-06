@@ -904,6 +904,62 @@ body.is-splash {
   gap: 0.9rem;
 }
 
+/* SF clustering lists */
+.sf-block {
+  margin-bottom: 1.5rem;
+  padding: 1.15rem 1.25rem 1.25rem;
+  background: var(--panel);
+  border: 1px solid rgba(198, 166, 97, 0.22);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.sf-block .todo-label {
+  margin-bottom: 0.55rem;
+}
+
+.sf-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.sf-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(198, 166, 97, 0.14);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--cream);
+}
+
+.sf-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sf-list-prod li {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 11rem) 1fr;
+  gap: 0.85rem;
+  align-items: baseline;
+}
+
+.sf-from {
+  font-family: var(--font-mincho);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .sf-list-prod li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
 /* MTG */
 .mtg-list {
   margin: 0;

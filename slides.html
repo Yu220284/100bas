@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bake.Ch — ばけちゃん</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="100歳と今をつなぐおばけロボット ばけちゃん。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./slides.css?v=illu5" />
+  </head>
+  <body class="tutor is-welcome">
+    <svg class="illu-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <symbol id="i-companion" viewBox="0 0 96 96">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="30" cy="26" r="8" />
+          <path d="M18 76c1-16 5.5-26 12-26s11 10 12 26" />
+          <path d="M64 28c8.5 0 14.5 7.5 14.5 17.5V70c0 0-3.2-2.8-6.6-2.8s-5 3.6-6.9 3.6-4.2-3.6-7-3.6S52 70 52 70V45.5C52 35.5 55.5 28 64 28z" />
+          <circle cx="60.2" cy="46" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="67.8" cy="46" r="1.5" fill="currentColor" stroke="none" />
+          <path d="M42 52h8" />
+        </g>
+      </symbol>
+      <symbol id="i-horizon" viewBox="0 0 120 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 48h104" />
+          <circle cx="92" cy="22" r="8" />
+          <path d="M18 48c8-10 16-16 24-16s14 8 22 16" />
+          <path d="M12 62c10-8 22-12 36-12 16 0 30 6 42 14" />
+        </g>
+      </symbol>
+      <symbol id="i-far" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 54h56" />
+          <circle cx="52" cy="22" r="7" />
+          <path d="M16 54c6-14 12-22 20-22 6 0 10 8 16 22" />
+          <circle cx="18" cy="54" r="2.2" />
+        </g>
+      </symbol>
+      <symbol id="i-choices" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="16" cy="36" r="7" />
+          <circle cx="36" cy="20" r="7" />
+          <circle cx="56" cy="42" r="7" />
+          <path d="M22 32l7-6" />
+          <path d="M43 26l6 8" stroke-dasharray="2.2 3.2" />
+        </g>
+      </symbol>
+      <symbol id="i-beside" viewBox="0 0 120 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="42" cy="24" r="7" />
+          <path d="M30 62c1-14 5-22 12-22s11 8 12 22" />
+          <path d="M76 26c7 0 12 6 12 14v22c0 0-2.6-2.2-5.4-2.2s-4.1 2.8-5.6 2.8-3.4-2.8-5.6-2.8S66 62 66 62V40c0-8 3-14 10-14z" />
+          <circle cx="73" cy="40" r="1.3" fill="currentColor" stroke="none" />
+          <circle cx="79" cy="40" r="1.3" fill="currentColor" stroke="none" />
+        </g>
+      </symbol>
+      <symbol id="i-monitor" viewBox="0 0 96 96">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="12" y="14" width="72" height="48" rx="6" />
+          <path d="M38 74h20" />
+          <path d="M48 62v12" />
+          <path d="M48 32c6 0 10 5 10 11v14c0 0-2.4-2-5-2s-3.6 2.6-5 2.6-2.6-2.6-5-2.6-5 2-5 2V43c0-6 4-11 10-11z" />
+          <circle cx="45.2" cy="43" r="1.2" fill="currentColor" stroke="none" />
+          <circle cx="50.8" cy="43" r="1.2" fill="currentColor" stroke="none" />
+        </g>
+      </symbol>
+      <symbol id="i-call" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="28" cy="22" r="8" />
+          <path d="M16 62c1-14 5.5-22 12-22s11 8 12 22" />
+          <path d="M48 26c4 3 6 8 6 14s-2 11-6 14" />
+          <path d="M56 20c6 5 10 12 10 20s-4 15-10 20" />
+        </g>
+      </symbol>
+      <symbol id="i-ask" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 18h32a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8H34l-10 10v-10h-8a8 8 0 0 1-8-8V26a8 8 0 0 1 8-8z" />
+          <circle cx="28" cy="34" r="1.8" fill="currentColor" stroke="none" />
+          <circle cx="36" cy="34" r="1.8" fill="currentColor" stroke="none" />
+          <circle cx="44" cy="34" r="1.8" fill="currentColor" stroke="none" />
+        </g>
+      </symbol>
+      <symbol id="i-remain" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="36" cy="36" r="24" stroke-dasharray="3.2 4.2" />
+          <circle cx="36" cy="28" r="7" />
+          <path d="M24 58c1-12 5-18 12-18s11 6 12 18" />
+        </g>
+      </symbol>
+      <symbol id="i-hw" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 28l18-10 18 10v24l-18 10-18-10V28z" />
+          <path d="M18 28l18 10 18-10" />
+          <path d="M36 38v24" />
+          <circle cx="36" cy="30" r="3.2" />
+        </g>
+      </symbol>
+      <symbol id="i-sw" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="12" y="16" width="48" height="40" rx="6" />
+          <path d="M22 28h18" />
+          <path d="M22 36h28" />
+          <path d="M22 44h12" />
+        </g>
+      </symbol>
+      <symbol id="i-desk" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="10" y="16" width="52" height="32" rx="4" />
+          <path d="M36 48v8" />
+          <path d="M26 56h20" />
+          <path d="M18 64h36" />
+        </g>
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 34l24-18 24 18" />
+          <path d="M18 32v26h36V32" />
+          <rect x="30" y="40" width="12" height="18" rx="1.5" />
+          <path d="M22 24v-8h8" />
+        </g>
+      </symbol>
+      <symbol id="i-chore" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 28h36l-4 28H22z" />
+          <path d="M28 28V22a8 8 0 0 1 16 0v6" />
+          <path d="M28 40h16" />
+        </g>
+      </symbol>
+      <symbol id="i-talk" viewBox="0 0 120 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 18h42a8 8 0 0 1 8 8v14a8 8 0 0 1-8 8H40l-10 8v-8H18a8 8 0 0 1-8-8V26a8 8 0 0 1 8-8z" />
+          <path d="M52 34h42a8 8 0 0 1 8 8v14a8 8 0 0 1-8 8H86l8 8v-8h0a8 8 0 0 1-8 0H52a8 8 0 0 1-8-8V42a8 8 0 0 1 8-8z" />
+        </g>
+      </symbol>
+      <symbol id="i-consult" viewBox="0 0 72 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="24" r="7" />
+          <circle cx="50" cy="24" r="7" />
+          <path d="M14 58c1-12 4.5-18 10-18s9 6 10 18" />
+          <path d="M40 58c1-12 4.5-18 10-18s9 6 10 18" />
+          <path d="M32 36h8" />
+        </g>
+      </symbol>
+      <symbol id="i-path" viewBox="0 0 96 96">
+        <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="70" cy="22" r="8" />
+          <ellipse cx="28" cy="74" rx="10" ry="4" />
+          <ellipse cx="44" cy="58" rx="8" ry="3.4" />
+          <ellipse cx="58" cy="44" rx="6.5" ry="2.8" />
+        </g>
+      </symbol>
+    </svg>
+
+    <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+    <p class="brand-mark">100BAS</p>
+
+    <div class="app-window" id="app">
+      <header class="app-bar">
+        <span class="app-dots" aria-hidden="true"></span>
+        <p class="app-title"><img src="./assets/logo/bake-ch.png" alt="Bake.Ch" /></p>
+        <nav class="chapters" id="chapters" aria-label="チュートリアル">
+          <button type="button" data-chapter="world">世界観</button>
+          <button type="button" data-chapter="how">使い方</button>
+          <button type="button" data-chapter="use">ユースケース</button>
+        </nav>
+      </header>
+
+      <main class="app-body">
+        <section class="screen is-on" data-screen="welcome" data-chapter="welcome">
+          <div class="welcome">
+            <div class="ghost-stage">
+              <span class="orbit o1"></span>
+              <span class="orbit o2"></span>
+              <span class="orbit o3"></span>
+              <span class="orbit o4"></span>
+              <span class="orbit o5"></span>
+              <img class="ghost ghost-lg" src="./assets/ghost/bakechan-cut.png" alt="" />
+            </div>
+            <p class="kicker">100歳と今をつなぐおばけロボット</p>
+            <h1 class="logo-type">
+              <img class="logo-mark" src="./assets/logo/bake-ch.png" alt="Bake.Ch" />
+            </h1>
+            <p class="sub">ばけちゃん</p>
+            <button type="button" class="start-btn" id="start">はじめる</button>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="world-1" data-chapter="world" hidden>
+          <div class="split">
+            <svg class="illu illu-hero" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-companion" /></svg>
+            <div>
+              <p class="eyebrow">世界観</p>
+              <h2>ばけちゃんは、<br />未来の自分。</h2>
+              <p class="lead">100歳になった自分が、いまのそばにいる。数字ではなく、存在として残るおばけロボットです。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="world-2" data-chapter="world" hidden>
+          <div class="copy-block">
+            <p class="eyebrow">世界観</p>
+            <h2>100歳は、まだ遠すぎる。</h2>
+            <div class="cards two">
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-far" /></svg>
+                <span>01</span>
+                <p>「100歳」が遠すぎて、自分ごととして捉えられていない</p>
+              </article>
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-choices" /></svg>
+                <span>02</span>
+                <p>日々の小さな選択が将来にどう繋がるか、実感する手段がない</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="world-3" data-chapter="world" hidden>
+          <div class="split">
+            <svg class="illu illu-hero illu-wide" viewBox="0 0 120 72" aria-hidden="true"><use href="#i-beside" /></svg>
+            <div>
+              <p class="eyebrow">世界観</p>
+              <h2>突きつけるのではなく、<br />そばにいる。</h2>
+              <p class="lead">「できなくなること」を教えるだけでは、見たくない・避けたい気持ちが生まれます。ばけちゃんは不安ではなく、<strong>今日の小さな行動</strong>へ気づきをくれます。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="how-1" data-chapter="how" hidden>
+          <div class="split">
+            <svg class="illu illu-hero" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-monitor" /></svg>
+            <div>
+              <p class="eyebrow">使い方</p>
+              <h2>デスクに、常駐する。</h2>
+              <p class="lead">PCのすみにいて、あなたの作業を見守ります。呼びかけると、近づいてきます。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="how-2" data-chapter="how" hidden>
+          <div class="copy-block">
+            <p class="eyebrow">使い方</p>
+            <h2>話しかける。</h2>
+            <div class="cards three">
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-call" /></svg>
+                <span>呼ぶ</span>
+                <p>「おばけちゃん」と呼ぶか、クリックして話を始めます</p>
+              </article>
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-ask" /></svg>
+                <span>頼む</span>
+                <p>暮らしのことも、調べものや下書きも、必要な分だけ任せます</p>
+              </article>
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-remain" /></svg>
+                <span>残る</span>
+                <p>数字ではなく、そばにいる感覚として残ります</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="how-3" data-chapter="how" hidden>
+          <div class="copy-block">
+            <p class="eyebrow">使い方</p>
+            <h2>空間と画面の、両方で。</h2>
+            <div class="cards three">
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-hw" /></svg>
+                <span>Point 1</span>
+                <p><strong>ハードウェア</strong><br />デスクに小さな顔があって、気配が伝わります</p>
+              </article>
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-sw" /></svg>
+                <span>Point 2</span>
+                <p><strong>ソフトウェア</strong><br />呼びかけに応えて、手伝ってくれます</p>
+              </article>
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-desk" /></svg>
+                <span>Point 3</span>
+                <p><strong>デスクトップ</strong><br />PCに常駐して、デジタルでもお手伝いします</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="use-1" data-chapter="use" hidden>
+          <div class="copy-block">
+            <p class="eyebrow">ユースケース</p>
+            <h2>暮らしを、手伝う。</h2>
+            <div class="cards two">
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-home" /></svg>
+                <span>空間</span>
+                <p>カーテンを開ける、電気をつける、ものの場所を教える</p>
+              </article>
+              <article>
+                <svg class="illu" viewBox="0 0 72 72" aria-hidden="true"><use href="#i-chore" /></svg>
+                <span>日常</span>
+                <p>片付けや小さな用事を、ばけちゃんが肩代わりします</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="use-2" data-chapter="use" hidden>
+          <div class="split">
+            <svg class="illu illu-hero illu-wide" viewBox="0 0 120 72" aria-hidden="true"><use href="#i-talk" /></svg>
+            <div>
+              <p class="eyebrow">ユースケース</p>
+              <h2>相談に、乗る。</h2>
+              <p class="lead">日々の悩みや人生相談に、人生の先輩として応えます。健康のために何かしたいけど、何をしたらいいかわからない。そんなとき、今日の一歩を一緒に見つけます。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="use-3" data-chapter="use" hidden>
+          <div class="split">
+            <svg class="illu illu-hero" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-path" /></svg>
+            <div>
+              <p class="eyebrow">ユースケース</p>
+              <h2>後悔のない100歳を、<br />迎えられる。</h2>
+              <p class="lead">未来の自分の幸せのために、いまできることが見つかる。ばけちゃんは、そのための守護霊です。</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <button type="button" class="tutor-hit tutor-hit-prev" id="hitPrev" aria-label="戻る"></button>
+    <button type="button" class="tutor-hit tutor-hit-next" id="hitNext" aria-label="進む"></button>
+    <button type="button" class="tutor-arrow tutor-prev" id="prev" aria-label="前へ">‹</button>
+    <button type="button" class="tutor-arrow tutor-next" id="next" aria-label="次へ">›</button>
+
+    <p class="tutor-count" id="count"></p>
+    <div class="tutor-dots" id="dots"></div>
+
+    <script src="./slides.js?v=illu1"></script>
+  </body>
+</html>

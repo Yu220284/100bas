@@ -45,7 +45,10 @@
                 <a href="#sec-todo">TODO</a>
                 <a href="#sec-schedule">Schedule</a>
                 <a href="#sec-ideas">Ideas</a>
+                <a href="#sec-sf">SF</a>
                 <a href="#sec-mtg">MTG</a>
+                <a href="./slides.html">Pitch</a>
+                <a href="./splash.html">Splash</a>
               </nav>
               <div class="lang-switch" role="group" aria-label="Language">
                 <button type="button" class="lang-btn is-active" data-lang-set="ja" aria-pressed="true">JA</button>
@@ -348,7 +351,7 @@
               <h3>岩瀬</h3>
               <p class="todo-label" data-i18n="todo.i.label">SF小説100作品読む</p>
               <ul class="checks">
-                <li data-i18n="todo.i1">星新一の高齢者・不老不死・老いなど、テーマ関連を既読200作品からピックアップ</li>
+                <li class="done" data-i18n="todo.i1">既読200から世界観・課題・プロダクトをリスト化 → #sec-sf</li>
               </ul>
             </article>
             <article class="panel todo" data-reveal>
@@ -491,12 +494,12 @@
               <p>濱川</p>
             </article>
             <article
-              class="panel"
+              class="panel panel-open"
               data-reveal
-              data-detail="岩瀬：星新一約200からテーマ関連を抽出→10クラスターに分類し代表作を精読。学術100資料は体予防・認知・住環境・社会参加・デジタル・AI・倫理などでオントロジー済み。"
+              data-detail="岩瀬：既読200作品＋追補から世界観7タイプ・横断課題・SFプロダクトをリスト化。詳細は #sec-sf。"
             >
-              <h3 data-i18n="research.3">SF小説 · 資料オントロジー</h3>
-              <p>岩瀬</p>
+              <h3 data-i18n="research.3">SF小説 · クラスタリング</h3>
+              <p>岩瀬 · <a href="#sec-sf" data-i18n="research.3a">リストを見る</a></p>
             </article>
             <article
               class="panel"
@@ -509,9 +512,72 @@
           </div>
         </section>
 
+        <section class="scene" id="sec-sf">
+          <div class="scene-head">
+            <p class="eyebrow">06 · SF Log</p>
+            <h2 data-i18n="sf.h2">SFクラスタリング</h2>
+            <p class="scene-lead" data-i18n="sf.lead">
+              テーマ「100歳の幸せ」に向け、既読SFから世界観・課題・プロダクトをシンプルに洗い出した。
+            </p>
+          </div>
+
+          <div class="sf-block" data-reveal>
+            <p class="todo-label" data-i18n="sf.world.label">世界観タイプ · 7</p>
+            <ul class="sf-list">
+              <li data-i18n="sf.w1">管理・幸福強制 — 正しさ／幸福を制度が先回りする</li>
+              <li data-i18n="sf.w2">監視・データ身体 — 記録が現実を上書きする</li>
+              <li data-i18n="sf.w3">身体改変・寿命拡張 — 生が技術で書き換えられる</li>
+              <li data-i18n="sf.w4">閉鎖空間・孤立 — 箱（施設・船・カプセル）の中で生きる</li>
+              <li data-i18n="sf.w5">環境崩壊・移住 — 家・土地の前提が崩れる</li>
+              <li data-i18n="sf.w6">異他者・共生 — AI・異星・非人間と暮らす</li>
+              <li data-i18n="sf.w7">意味・物語崩壊 — 自分語り／生きがいが作れなくなる</li>
+            </ul>
+          </div>
+
+          <div class="sf-block" data-reveal>
+            <p class="todo-label" data-i18n="sf.issue.label">生まれる課題 · 100歳と衝突しやすいもの</p>
+            <ul class="sf-list">
+              <li data-i18n="sf.i1">世話と支配の境界が消える（ケアが監視になる）</li>
+              <li data-i18n="sf.i2">安全・長寿の代わりに、選ばない自由が消える</li>
+              <li data-i18n="sf.i3">記録はあるが意味がない／意味はあるが記録が消える</li>
+              <li data-i18n="sf.i4">延びた寿命の「誰のために残るか」が空白になる</li>
+              <li data-i18n="sf.i5">施設・居室が守る箱にも檻にもなる</li>
+              <li data-i18n="sf.i6">人間以外の他者（AI・ロボット）への依存と寂しさ</li>
+              <li data-i18n="sf.i7">楽しみ・生きがいがコンテンツ消費に回収される</li>
+            </ul>
+          </div>
+
+          <div class="sf-block" data-reveal>
+            <p class="todo-label" data-i18n="sf.prod.label">SFプロダクト／技術 · 例</p>
+            <ul class="sf-list sf-list-prod">
+              <li><span class="sf-from">アルジャーノンに花束を</span>知能を飛躍的に高める手術</li>
+              <li><span class="sf-from">いぬやしき</span>人体を機械ボディへ置換する改造</li>
+              <li><span class="sf-from">ハーモニー</span>生体内の常時健康監視ネットワーク</li>
+              <li><span class="sf-from">おまかせ端末</span>判断・選択を代行する端末</li>
+              <li><span class="sf-from">プラチナデータ</span>ゲノムと顔認識による身元データ化</li>
+              <li><span class="sf-from">ボッコちゃん</span>完璧な接客アンドロイド</li>
+              <li><span class="sf-from">パッセンジャー</span>長期休眠ポッド付き殖民船</li>
+              <li><span class="sf-from">ヘイル・メアリー</span>異種族との共同実験・コミュニケーション</li>
+              <li><span class="sf-from">スカイ・クロラ</span>永不老化と終わらない任務の制度</li>
+              <li><span class="sf-from">クララとお日さま</span>観察型AIフレンド（AF）</li>
+              <li><span class="sf-from">攻殻機動隊</span>電脳化・義体</li>
+              <li><span class="sf-from">すばらしい新世界</span>快楽薬 Soma・人工階級孵化</li>
+            </ul>
+          </div>
+
+          <div class="sf-block" data-reveal>
+            <p class="todo-label" data-i18n="sf.next.label">次にやること</p>
+            <ul class="sf-list">
+              <li data-i18n="sf.n1">優先する世界観を1〜2個に絞る</li>
+              <li data-i18n="sf.n2">解決する課題を1文で書く</li>
+              <li data-i18n="sf.n3">ヒアリング・都市調査と突合する</li>
+            </ul>
+          </div>
+        </section>
+
         <section class="scene" id="sec-mtg">
           <div class="scene-head">
-            <p class="eyebrow">06</p>
+            <p class="eyebrow">07</p>
             <h2 data-i18n="mtg.h2">MTGログ</h2>
             <p class="scene-lead" data-i18n="mtg.lead">議事録から、方針とアクションを補足。</p>
           </div>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>100バス — 掃引 5案</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Syne:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./splash-compare.css" />
+  </head>
+  <body>
+    <header class="chooser">
+      <p class="chooser-brand">100バス · 掃引</p>
+      <nav class="chooser-nav" aria-label="20から100への掃引">
+        <button type="button" class="is-active" data-morph="sweepL">案1 左</button>
+        <button type="button" data-morph="sweepR">案2 右</button>
+        <button type="button" data-morph="sweepV">案3 縦</button>
+        <button type="button" data-morph="sweepC">案4 中央</button>
+        <button type="button" data-morph="sweepA">案5 回転</button>
+      </nav>
+      <div class="chooser-tools">
+        <button type="button" id="replay">Replay</button>
+        <a href="./slides.html">スライドへ</a>
+        <button type="button" data-play="b">案B</button>
+        <button type="button" data-play="c">案C</button>
+      </div>
+    </header>
+
+    <button type="button" class="hit hit-prev" id="hitPrev" aria-label="戻る">‹</button>
+    <button type="button" class="hit hit-next" id="hitNext" aria-label="進む">›</button>
+
+    <div class="explain" id="explain" hidden>
+      <p class="explain-count" id="explainCount">1/3</p>
+      <p class="explain-text" id="explainText"></p>
+      <div class="explain-dots" id="explainDots"></div>
+    </div>
+
+    <p class="chooser-note" id="chooserNote">右側をクリックして進む</p>
+
+    <!-- A: 100 as stars -->
+    <div class="splash splash-a is-on" id="splashA" data-kind="a">
+      <div class="splash-sky" aria-hidden="true"></div>
+      <canvas class="splash-canvas" id="canvasA" aria-hidden="true"></canvas>
+      <div class="splash-copy">
+        <p class="splash-kicker">Electric Sheep</p>
+        <p class="splash-title">100バス</p>
+        <p class="splash-sub">SF Prototyping Hackathon</p>
+      </div>
+    </div>
+
+    <!-- B: ghost approaches -->
+    <div class="splash splash-b" id="splashB" data-kind="b" hidden>
+      <div class="splash-sky" aria-hidden="true"></div>
+      <div class="ghost-approach" aria-hidden="true">
+        <img src="./assets/ghost/ObakeNormal.webp" alt="" />
+      </div>
+      <div class="splash-copy">
+        <p class="splash-kicker">見守りお化けロボット</p>
+        <p class="splash-title">未来の自分が、そばにいる</p>
+        <p class="splash-sub">100歳になった時、自分を幸せにするプロダクト</p>
+      </div>
+    </div>
+
+    <!-- C: 20 and 100 connect -->
+    <div class="splash splash-c" id="splashC" data-kind="c" hidden>
+      <div class="splash-sky" aria-hidden="true"></div>
+      <div class="ages" aria-hidden="true">
+        <span class="age age-20">20</span>
+        <div class="age-bridge">
+          <span class="age-line"></span>
+          <img class="age-ghost" src="./assets/ghost/ObakeNormal.webp" alt="" />
+        </div>
+        <span class="age age-100">100</span>
+      </div>
+      <div class="splash-copy">
+        <p class="splash-kicker">100バス</p>
+        <p class="splash-title">100歳と20歳を繋ぐ</p>
+        <p class="splash-sub">おばけロボット</p>
+      </div>
+    </div>
+
+    <script src="./splash-compare.js"></script>
+  </body>
+</html>
